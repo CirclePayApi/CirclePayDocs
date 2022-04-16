@@ -1,0 +1,2862 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the CirclePay API"
+        >
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-bc73b33c.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#integration-process" class="toc-h1 toc-link" data-title="Integration Process">Integration Process</a>
+          </li>
+          <li>
+            <a href="#payment-gateway" class="toc-h1 toc-link" data-title="Payment Gateway">Payment Gateway</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-payment-gateways" class="toc-h2 toc-link" data-title="List Payment Gateways">List Payment Gateways</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-payment-gateway" class="toc-h2 toc-link" data-title="Retrieve a Payment Gateway">Retrieve a Payment Gateway</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#payment-methods" class="toc-h1 toc-link" data-title="Payment Methods">Payment Methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-a-payment-methods" class="toc-h2 toc-link" data-title="List a Payment Methods">List a Payment Methods</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-payment-method" class="toc-h2 toc-link" data-title="Retrieve a Payment Method">Retrieve a Payment Method</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#merchants" class="toc-h1 toc-link" data-title="Merchants">Merchants</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-merchant" class="toc-h2 toc-link" data-title="Create a Merchant">Create a Merchant</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-merchant" class="toc-h2 toc-link" data-title="Retrieve a Merchant">Retrieve a Merchant</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-merchant" class="toc-h2 toc-link" data-title="Update a Merchant">Update a Merchant</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-merchants" class="toc-h2 toc-link" data-title="List all merchants">List all merchants</a>
+                  </li>
+                  <li>
+                    <a href="#enable-gateway" class="toc-h2 toc-link" data-title="Enable gateway">Enable gateway</a>
+                  </li>
+                  <li>
+                    <a href="#disable-gateway" class="toc-h2 toc-link" data-title="Disable gateway">Disable gateway</a>
+                  </li>
+                  <li>
+                    <a href="#list-payment-gateways-2" class="toc-h2 toc-link" data-title="List payment gateways">List payment gateways</a>
+                  </li>
+                  <li>
+                    <a href="#enable-payment-method" class="toc-h2 toc-link" data-title="Enable payment method">Enable payment method</a>
+                  </li>
+                  <li>
+                    <a href="#disable-payment-method" class="toc-h2 toc-link" data-title="Disable payment method">Disable payment method</a>
+                  </li>
+                  <li>
+                    <a href="#list-payment-methods" class="toc-h2 toc-link" data-title="List payment methods">List payment methods</a>
+                  </li>
+                  <li>
+                    <a href="#send-otp" class="toc-h2 toc-link" data-title="Send OTP">Send OTP</a>
+                  </li>
+                  <li>
+                    <a href="#verify-merchant" class="toc-h2 toc-link" data-title="Verify Merchant">Verify Merchant</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#customers" class="toc-h1 toc-link" data-title="Customers">Customers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-customer" class="toc-h2 toc-link" data-title="Create a Customer">Create a Customer</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-customer" class="toc-h2 toc-link" data-title="Update a Customer">Update a Customer</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-customer" class="toc-h2 toc-link" data-title="Retrieve a customer">Retrieve a customer</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-customers" class="toc-h2 toc-link" data-title="List all customers">List all customers</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#payment" class="toc-h1 toc-link" data-title="Payment">Payment</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-a-payment" class="toc-h2 toc-link" data-title="Get a payment">Get a payment</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-payments" class="toc-h2 toc-link" data-title="List all payments">List all payments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#refund" class="toc-h1 toc-link" data-title="Refund">Refund</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#request-a-refund" class="toc-h2 toc-link" data-title="Request a refund">Request a refund</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-refunds" class="toc-h2 toc-link" data-title="List all refunds">List all refunds</a>
+                  </li>
+                  <li>
+                    <a href="#get-refund" class="toc-h2 toc-link" data-title="Get refund">Get refund</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#invoice" class="toc-h1 toc-link" data-title="Invoice">Invoice</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-an-invoice" class="toc-h2 toc-link" data-title="Create an invoice">Create an invoice</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-an-invoice" class="toc-h2 toc-link" data-title="Retrieve an invoice">Retrieve an invoice</a>
+                  </li>
+                  <li>
+                    <a href="#list-invoices" class="toc-h2 toc-link" data-title="list invoices">list invoices</a>
+                  </li>
+                  <li>
+                    <a href="#delete-an-invoice" class="toc-h2 toc-link" data-title="Delete an invoice">Delete an invoice</a>
+                  </li>
+                  <li>
+                    <a href="#pay-an-invoice" class="toc-h2 toc-link" data-title="Pay an invoice">Pay an invoice</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#general" class="toc-h2 toc-link" data-title="General">General</a>
+                  </li>
+                  <li>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                  </li>
+                  <li>
+                    <a href="#customer" class="toc-h2 toc-link" data-title="Customer">Customer</a>
+                  </li>
+                  <li>
+                    <a href="#payment-links" class="toc-h2 toc-link" data-title="Payment Links">Payment Links</a>
+                  </li>
+                  <li>
+                    <a href="#invoices" class="toc-h2 toc-link" data-title="Invoices">Invoices</a>
+                  </li>
+                  <li>
+                    <a href="#payment-gateways" class="toc-h2 toc-link" data-title="Payment gateways">Payment gateways</a>
+                  </li>
+                  <li>
+                    <a href="#merchant" class="toc-h2 toc-link" data-title="Merchant">Merchant</a>
+                  </li>
+                  <li>
+                    <a href="#transactions" class="toc-h2 toc-link" data-title="Transactions">Transactions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#validation-rules" class="toc-h1 toc-link" data-title="Validation Rules">Validation Rules</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://circlepay.ai/#howtouse'>Sign Up for CirclePay</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>CirclePay is a platform that enables merchants to develop their projects by connecting many electronic payment gateways located in Egypt in one place with the freedom to choose the appropriate payment method.</p>
+<h1 id='integration-process'>Integration Process</h1>
+<p>To consume CirclePay Apis you should:</p>
+
+<ul>
+<li><strong>First of all setup your account, payment gateways and payment methods:</strong></li>
+</ul>
+
+<p><strong>1</strong>. Add account key and token to your platform </p>
+
+<p><strong>2</strong>. Create a merchant:<br/>
+&nbsp;2.1. <a href="https://sandbox-openapi.circlepay.ai/swagger-ui.html#!/Merchants/createMerchantUsingPOST" target="_blank" style="text-decoration: none;">POST /merchants/create</a><br/>
+&nbsp;2.2. <a href="https://sandbox-openapi.circlepay.ai/swagger-ui.html#!/Merchants/sendOTPUsingPOST" target="_blank" style="text-decoration: none;">POST /merchants/send/otp</a><br/>
+&nbsp;2.3. <a href="https://sandbox-openapi.circlepay.ai/swagger-ui.html#!/Merchants/verifyMerchantUsingPOST" target="_blank" style="text-decoration: none;">POST /merchants/verify</a><br></p>
+
+<p><strong>3</strong>. List Payment Gateways in the system:<br/>
+&nbsp;3.1. <a href="https://sandbox-openapi.circlepay.ai/swagger-ui.html#!/Merchants/listPaymentGatewayUsingGET" target="_blank" style="text-decoration: none;">GET /payment/gateway/list</a><br></p>
+
+<p><strong>4</strong>. Enable Payment Gateway for a merchant:<br/>
+&nbsp;4.1. <a href="https://sandbox-openapi.circlepay.ai/swagger-ui.html#!/Merchants/enablePaymentGatewayUsingGET" target="_blank" style="text-decoration: none;">GET /merchants/payment/gateway/enable/{payment_gateway_id}</a><br></p>
+
+<p><strong>5</strong>. List Payment Method in the System:<br/>
+&nbsp;5.1. <a href="https://sandbox-openapi.circlepay.ai/swagger-ui.html#!/Merchants/listPaymentMethodsUsingGET" target="_blank" style="text-decoration: none;">GET /payment/methods/list/{paymentGatewayId}</a><br></p>
+
+<p><strong>6</strong>. Enable Payment Method:<br/>
+&nbsp;6.1. <a href="https://sandbox-openapi.circlepay.ai/swagger-ui.html#!/Merchants/enablePaymentMethodUsingGET" target="_blank" style="text-decoration: none;">GET /merchants/payment/method/enable/{payment_method_id}</a><br></p>
+
+<ul>
+<li><strong>After setup you can create and pay invoices:</strong></li>
+</ul>
+
+<p><strong>7</strong>. Create invoice:<br/>
+&nbsp;7.1. <a href="https://sandbox-openapi.circlepay.ai/swagger-ui.html#!/Invoice/createInvoiceUsingPOST" target="_blank" style="text-decoration: none;">POST /invoice/create</a><br></p>
+
+<p><strong>8</strong>. Pay Invoice:<br/>
+&nbsp;8.1. <a href="https://sandbox-openapi.circlepay.ai/swagger-ui.html#!/Invoice/payInvoiceUsingPOST" target="_blank" style="text-decoration: none;">POST /invoice/pay</a><br></p>
+
+<ul>
+<li><strong>Now you can list transactions:</strong></li>
+</ul>
+
+<p><strong>9</strong>. List Transactions:<br/>
+&nbsp;9.1. <a href="https://sandbox-openapi.circlepay.ai/swagger-ui.html#!/Payment/getAllPaymentsUsingPOST" target="_blank" style="text-decoration: none;">POST /payment/list</a><br></p>
+<h1 id='payment-gateway'>Payment Gateway</h1>
+<p>To process online transactions, you will need both a payment gateway and a payment method. </p>
+
+<p><span style="color: red">A payment gateway</span> is the technology that captures and transfers payment data from the customer to the acquirer. </p>
+
+<p><span style="color: red">A payment method</span> is a way that customers pay for a product or service. </p>
+
+<aside class="notice">
+Each transaction requires a definition for a payment gateway and a payment method.
+</aside>
+
+<p><img src="https://devathon.com/wp-content/uploads/2020/02/Patement-gateway-process-Devathon.png" ></p>
+<h2 id='list-payment-gateways'>List Payment Gateways</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="s1">'https://circlepay.ai/apis/payment/gateway/list'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215a"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyFatoorah"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"613927082de6eb5dc061d516"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fawry"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves all payment gateways to the merchant.</p>
+<h3 id='parameters'>Parameters</h3>
+<p>No Parameters.</p>
+<h3 id='returns'>Returns</h3>
+<p>Returns payment gateway list.</p>
+<h2 id='retrieve-a-payment-gateway'>Retrieve a Payment Gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="s1">'https://circlepay.ai/apis/payment/gateway/get/{payment_gateway_ID}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215a"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyFatoorah"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves a specific payment gateway.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_gateway_ID</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment gateway object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-2'>Returns</h3>
+<p>Return a payment gateway object.</p>
+
+<aside class="notice">
+The error codes used when you fail to get specific payment gateway are <a href="#1110">1110</a> , <a href="#7111">7111</a>
+</aside>
+<h1 id='payment-methods'>Payment Methods</h1>
+<p><span style="color: red">A payment method</span> is a way that customers pay for a product or service. CirclePay gives customers the freedom to choose between payment methods like: cash, credit cards, prepaid cards, debit cards, or mobile payments.</p>
+
+<table><thead>
+<tr>
+<th>MyFatoorh</th>
+<th>Fawry</th>
+<th>Paymob</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Visa</td>
+<td>Visa</td>
+<td>Visa</td>
+</tr>
+<tr>
+<td>MasterCard</td>
+<td>MasterCard</td>
+<td>MasterCard</td>
+</tr>
+<tr>
+<td>meeza</td>
+<td>meeza</td>
+<td>Kiosk Payments</td>
+</tr>
+<tr>
+<td>Mobile Wallet</td>
+<td>E-wallet Payment</td>
+<td>Cash Collection</td>
+</tr>
+<tr>
+<td>ValU</td>
+<td>Reference Number</td>
+<td>ValU</td>
+</tr>
+<tr>
+<td>SADAD</td>
+<td>ValU</td>
+<td>Mobile Wallets</td>
+</tr>
+<tr>
+<td>mada</td>
+<td></td>
+<td>SOUHOOLA</td>
+</tr>
+<tr>
+<td>ApplePay</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Knet</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>American express</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<span style="color: red">Paymob, Fawry, MyFatoorah</span> are payment gateways. Each of these payment gateways are supporting a number of payment methods. So, a payment method won't be available unless you enable the corresponding payment gateway.
+</aside>
+<h2 id='list-a-payment-methods'>List a Payment Methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="s1">'https://circlepay.ai/apis/payment/methods/list/{paymentGatewayId}
+'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"61bf27e54b8bcfac495f997c"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wallet"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215a"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"61c0401b253faaefc6af1993"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Meeza"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215a"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves all payment methods of the specific gateway.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_gateway_ID</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment gateway object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-3'>Returns</h3>
+<p>Returns a payment methods list.</p>
+
+<aside class="notice">
+The error codes used when you fail to list payment methods are <a href="#1110">1110</a> , <a href="#7111">7111</a>
+</aside>
+<h2 id='retrieve-a-payment-method'>Retrieve a Payment Method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="s1">'https://circlepay.ai/apis/PaymentMethod/get/{payment_method_id}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215c"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMEX"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215a"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves a specific payment method.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_method_ID</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment method object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-4'>Returns</h3>
+<p>Returns a payment method object.</p>
+
+<aside class="notice">
+The error codes used when you fail to get a specific payment method are <a href="#1110">1110</a> , <a href="#7113">7113</a>
+</aside>
+<h1 id='merchants'>Merchants</h1>
+<p><span style="color: red">Merchant</span> is the person or company engaged in the business of selling products or services. For example, wholesaler or retail store owner.</p>
+<h2 id='create-a-merchant'>Create a Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="nt">-d</span> <span class="nv">first_name</span><span class="o">=</span><span class="s2">"Ahmed"</span>
+     <span class="nt">-d</span> <span class="nv">last_name</span><span class="o">=</span><span class="s2">"Khaled"</span>
+     <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
+     <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001414133"</span>
+     <span class="nt">-d</span> <span class="nv">Business_Name</span><span class="o">=</span><span class="s2">"E-commerce"</span>
+     <span class="nt">-d</span> <span class="nv">Business_Address</span><span class="o">=</span><span class="s2">"El-maadi"</span>
+     <span class="nt">-d</span> <span class="nv">callback_url</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/create'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"merchant_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJpZCI6Nzk3LCJpc1ZlcmlmaWVkIjpmYWxz"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint helps you to create new merchant.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The merchant&#39;s first name.</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The merchant&#39;s last name.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The merchant&#39;s email.</td>
+</tr>
+<tr>
+<td>mobile_number</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The merchant&#39;s phone number.</td>
+</tr>
+<tr>
+<td>Business_Name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The business name.</td>
+</tr>
+<tr>
+<td>Business_Address</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The business address.</td>
+</tr>
+<tr>
+<td>callback_url</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>A callback URL will be invoked by the API method you&#39;re calling after it&#39;s done.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Password will be auto generated.
+</aside>
+<h3 id='returns-5'>Returns</h3>
+<p>Returns the merchant id if the merchant created successfully. Returns an error if create parameters are invalid.</p>
+
+<aside class="notice">
+The error codes used when you fail to create a merchant are <a href="#8110">8110</a> , <a href="#1110">1110</a> , <a href="#1112">1112</a>
+</aside>
+<h3 id='callback-service'>Callback Service</h3>
+<p>You as a platform or a merchant will implement or develop this callback so you can know transaction status. The specification of this callback is made by CirclePay.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>transaction_id</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier of transaction object.</td>
+</tr>
+<tr>
+<td>transaction_type</td>
+<td>Integer</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The type of transaction (1 for payments, 2 for refund).</td>
+</tr>
+<tr>
+<td>transaction_status</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Can be used to track the state or condition of the transaction record for example, &quot;pending&quot;.</td>
+</tr>
+<tr>
+<td>payment_gateway_name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The name of payment gateway.</td>
+</tr>
+<tr>
+<td>payment_method_name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The name of payment method.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-6'>Returns</h3>
+<p>Http response will be 200 in success, else it will be other http response.</p>
+<h2 id='retrieve-a-merchant'>Retrieve a Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/get'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"khaled"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"medy@circlepay.ai"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201005081863"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-commerceEgypt"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"El-maadi"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"refund_policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shipping_policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"merchant_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjk4LCJpc1Zlcmlm"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves a specific merchant.</p>
+<h3 id='parameters-2'>Parameters</h3>
+<p>No Parameters.</p>
+<h3 id='returns-7'>Returns</h3>
+<p>Returns the merchant object for a valid identifier.</p>
+<h2 id='update-a-merchant'>Update a Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="nt">-d</span> <span class="nv">first_name</span><span class="o">=</span><span class="s2">"ahmed"</span>
+     <span class="nt">-d</span> <span class="nv">last_name</span><span class="o">=</span><span class="s2">"khaled"</span>
+     <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmed@gmail.com"</span>
+     <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001215155"</span>
+     <span class="nt">-d</span> <span class="nv">business_name</span><span class="o">=</span><span class="s2">"ecommerce"</span>
+     <span class="nt">-d</span> <span class="nv">business_address</span><span class="o">=</span><span class="s2">"el-maadi"</span>
+     <span class="nt">-d</span> <span class="nv">callback_url</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/update'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"khaled"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed@gmail.com"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212155"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecommerce"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"el-maadi"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"refund_policy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Refunds and exchanges, right to cancel your order"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"shipping_policy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original sales receipt must accompany returns"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"merchant_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImZpcnN0Tm"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Updates the specified merchant by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The merchant&#39;s first name.</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The merchant&#39;s last name.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The merchant&#39;s email.</td>
+</tr>
+<tr>
+<td>Business_Name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The business name.</td>
+</tr>
+<tr>
+<td>Business_Address</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The business address.</td>
+</tr>
+<tr>
+<td>callback_url</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>A callback URL will be invoked by the API method you&#39;re calling after it&#39;s done.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-8'>Returns</h3>
+<p>Returns the merchant object if the update succeeded. Returns an error if update parameters are invalid.</p>
+
+<aside class="notice">
+The error codes used when you fail to update a merchant are <a href="#8116">8116</a> , <a href="#1110">1110</a> , <a href="#1112">1112</a>
+</aside>
+<h2 id='list-all-merchants'>List all merchants</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/list'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"khaled"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed@gmail.com"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212155"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecommerce"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"el-maadi"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"refund_policy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Refunds and exchanges, right to cancel your order"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"shipping_policy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original sales receipt must accompany returns"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ibrahim"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"salah"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ibrahim@gmail.com"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001812155"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nike"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"el-maadi"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"refund_policy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Refunds and exchanges, right to cancel your order"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"shipping_policy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original sales receipt must accompany returns"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves all merchants.</p>
+<h3 id='parameters-3'>Parameters</h3>
+<p>No Parameters.</p>
+<h3 id='returns-9'>Returns</h3>
+<p>Returns an array. Each entry in the array is a separate user object.This request should never return an error.</p>
+<h2 id='enable-gateway'>Enable gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/gateway/enable/{payment_gateway_id}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"payment_gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215b"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint enable specific payment gateway.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payemnt_gateway_id</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment gateway object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-10'>Returns</h3>
+<p>Returns id of enabled payment gateway.</p>
+
+<aside class="notice">
+The error codes used when you fail to enable gateway are <a href="#7110">7110</a> , <a href="#7111">7111</a>
+</aside>
+<h2 id='disable-gateway'>Disable gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/gateway/disable/{payment_gateway_id}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"payment_gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215b"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint disable specific gateway and it&#39;s related payment methods.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_gateway_ID</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment gateway object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-11'>Returns</h3>
+<p>Returns the id of disabled payment gateway.</p>
+
+<aside class="notice">
+The error codes used when you fail to disable gateway are <a href="#7111">7111</a> , <a href="#8117">8117</a>
+</aside>
+<h2 id='list-payment-gateways-2'>List payment gateways</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/gateway/list'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+</span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215a"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyFatoorah"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RY6GXFd6KJKBZ98PHPLJOpmXthqkppqM3FF79cbUhv_MACpIAQ4LD3R5MemgqnA3BgVtEa-NeIItV4fFawY4XalaXuRKqcYM2MXIaYbvJnudshMQSOrQwWcvetktUzdNxQxUsoPAu6vEKlynpVkf0VYqr-9SLYSfvxKiMe6rnqGmtwMC5fcUdkfgrVznxCTr4B7dqQX09vU1_YC_gFzLxQPTP5z3Juum1JAxxv8kJ7RShclqMcWM_g2tNWzy3omqGqUflWobBBe3ebdiLtIF9pzYTqOvHsVi6k9HM6AnKR79hTQbfVICTacdhvNGKhy6HbjsaShDfI6gg4DgZ5dBjOboth9lPtqSb2OBB_3vbvUjyeOa71I5DbyEWx4Nx96luiybyvjf0ig8_yAs5HeuPz2BPPeglaila0fhW79KsKfMs9CBjKLDsJJ4EPMR6TALwefsBebOPLX6fqUvYzAuu4T8lUTAl1LlV_QeI1sc6IAc5KmkHzodRw-lQdq201a9SG6qfOH61QP_hQwS98tObIdBqQAhu2_oMNDOhYQ9kTVrSgQTrCkYTmhDI3xTp8TA09OtH7I80g-gUVf_y_zYEbJXomFVrRcPHHrt9tl1DJ9wAiaL6P9o1QrEVf7zAmLn8FedgGLdeBjOcIFjcCCQd0eLQZxTC7krBHYAXZeZbW0-RfaD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchantCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchantRefNum"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215b"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PayMob"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"CARD"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"iframeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64969"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"integrationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33483"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CASH"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"iframeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"integrationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Kiosk"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"iframeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"integrationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"107439"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Wallet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"iframeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"integrationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"104351"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTltYVd4bFgzQnJJam94TkRnM01Td2libUZ0WlNJNkltbHVhWFJwWVd3aUxDSmpiR0Z6Y3lJNklrMWxjbU5vWVc1MEluMC4ybzdQVld2UHJTR0MzR0xCaDF4VzZjQWhiNUVFMS1uN3lIeGVTTFNENVF5OFlHeDBQQzY3OGM5dXJnZ2R4MHZSSDR5NHdHcG01VXM4NmJ1bWNMeU4xdw=="</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"SUHOOLA"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"iframeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"326757"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"integrationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33483"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"613927082de6eb5dc061d516"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fawry"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f19f9720-6462-466d-b9bc-4128f772bafb"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchantCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"siYxylRjSPx5Hw/oRBKFwQ=="</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchantRefNum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint list merchant&#39;s payment gateways.</p>
+<h3 id='parameters-4'>Parameters</h3>
+<p>No Parameters.</p>
+<h3 id='returns-12'>Returns</h3>
+<p>Returns the payment gateways list for merchant.</p>
+<h2 id='enable-payment-method'>Enable payment method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/method/enable/{payment_method_ID}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"payment_method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215c"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint enable specific payment method.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_method_ID</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment method object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-13'>Returns</h3>
+<p>Returns id of enabled payment method.</p>
+
+<aside class="notice">
+The error codes used when you fail to enable payment method are <a href="#7112">7112</a> , <a href="#7113">7113</a> , <a href="#1110">1110</a>
+</aside>
+<h2 id='disable-payment-method'>Disable payment method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/method/enable/{payment_method_ID}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"payment_method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215c"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint disable specific payment method.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_method_ID</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment method object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-14'>Returns</h3>
+<p>Returns id of the disabled payment method.</p>
+
+<aside class="notice">
+The error code used when you fail to disable payment method is <a href="#7113">7113</a>
+</aside>
+<h2 id='list-payment-methods'>List payment methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/method/list'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+      </span><span class="p">[</span><span class="w"> 
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852168"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visa"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c8521we"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MasterCard"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+       </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint list allowed payment methods to the merchant.</p>
+<h3 id='parameters-5'>Parameters</h3>
+<p>No parameters.</p>
+<h3 id='returns-15'>Returns</h3>
+<p>Returns a payment methods list of the merchant.</p>
+<h2 id='send-otp'>Send OTP</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">-d</span> <span class="nv">merchant_mobile</span><span class="o">=</span><span class="s2">"+201012794709"</span>
+     <span class="nt">-d</span> <span class="nv">country_code</span><span class="o">=</span><span class="s2">"+20"</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/send/otp'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint sends the OTP to validate the merchant.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>merchant_mobile</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The merchant&#39;s mobile number.</td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The country code for example, the country code for egypt is +20</td>
+</tr>
+</tbody></table>
+<h3 id='returns-16'>Returns</h3>
+<p>Returns the status (true or false).</p>
+
+<aside class="notice">
+The error codes used when you fail to send otp to merchant are <a href="#8118">8111</a> , <a href="#8113">8113</a>
+</aside>
+<h2 id='verify-merchant'>Verify Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/verify'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint allow you to verify merchant.</p>
+<h3 id='parameters-6'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Merchant_mobile</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Merchant&#39;s mobile number.</td>
+</tr>
+<tr>
+<td>otp</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>One-time password (OTP) systems provide a mechanism for logging on to a network or service using a unique password that can only be used once.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-17'>Returns</h3>
+<p>Verify merchant mobile to compelete registration.</p>
+
+<aside class="notice">
+The error code used when you fail to verify merchant is <a href="#2111">2111</a>
+</aside>
+<h1 id='customers'>Customers</h1><h2 id='create-a-customer'>Create a Customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="nt">-d</span> <span class="nv">First_Name</span><span class="o">=</span><span class="s2">"Ahmed"</span>
+     <span class="nt">-d</span> <span class="nv">Last_Name</span><span class="o">=</span><span class="s2">"Khaled"</span>
+     <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
+     <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001616166"</span>
+     <span class="nt">-d</span> <span class="nv">country</span><span class="o">=</span><span class="s2">"Egypt"</span>
+     <span class="nt">-d</span> <span class="nv">city</span><span class="o">=</span><span class="s2">"cairo"</span>
+     <span class="s1">'https://circlepay.ai/apis/customer/create'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">  
+       </span><span class="nl">"customer_mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212144"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint helps you to create new customer.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>First_Name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s first name.</td>
+</tr>
+<tr>
+<td>Last_Name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s last name.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s email.</td>
+</tr>
+<tr>
+<td>mobile_number</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s phone number.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s country.</td>
+</tr>
+<tr>
+<td>governorate</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s governorate.</td>
+</tr>
+<tr>
+<td>city</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s city.</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s address.</td>
+</tr>
+<tr>
+<td>apt_num</td>
+<td>Numeric</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s apartment number.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-18'>Returns</h3>
+<p>Returns the customer mobile number if the customer&#39;s creation succeeded. Returns an error if parameters are invalid.</p>
+
+<aside class="notice">
+The error codes used when you fail to create a customer are <a href="#3111">3111</a> , <a href="#1110">1110</a>
+</aside>
+<h2 id='update-a-customer'>Update a Customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="nt">-d</span> <span class="nv">First_Name</span><span class="o">=</span><span class="s2">"Ahmed"</span>
+     <span class="nt">-d</span> <span class="nv">Last_Name</span><span class="o">=</span><span class="s2">"Khaled"</span>
+     <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
+     <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001717177"</span>
+     <span class="nt">-d</span> <span class="nv">country</span><span class="o">=</span><span class="s2">"Egypt"</span>
+     <span class="nt">-d</span> <span class="nv">city</span><span class="o">=</span><span class="s2">"cairo"</span>
+     <span class="s1">'https://circlepay.ai/apis/customer/update'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">  
+       </span><span class="nl">"customer_mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212144"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint helps you to update customer details.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>First_Name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s first name.</td>
+</tr>
+<tr>
+<td>Last_Name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s last name.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s email.</td>
+</tr>
+<tr>
+<td>mobile_number</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s phone number.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s country.</td>
+</tr>
+<tr>
+<td>governorate</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s governorate.</td>
+</tr>
+<tr>
+<td>city</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s city.</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s address.</td>
+</tr>
+<tr>
+<td>apt_num</td>
+<td>Numeric</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s apartment number.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-19'>Returns</h3>
+<p>Returns the customer mobile number if the customer&#39;s update succeeded. Returns an error if parameters are invalid.</p>
+
+<aside class="notice">
+The error codes used when you fail to update a customer are <a href="#3110">3110</a> , <a href="#1110">1110</a>, <a href="#1117">1117</a>
+</aside>
+<h2 id='retrieve-a-customer'>Retrieve a customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/customer/get/{customer_mobile_number}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">  
+       </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ibrahim"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salah"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ibrahim@gmail.com"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212144"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Egypt"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"governorate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cairo"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nasr"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"72 gamal st"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"apt_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves a specific customer.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customer_mobile_number</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Customer&#39;s mobile number.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-20'>Returns</h3>
+<p>Returns the Customer object for a valid mobile number.</p>
+
+<aside class="notice">
+The error code used when you fail to retrieve a specific customer is <a href="#3110">3110</a>
+</aside>
+<h2 id='list-all-customers'>List all customers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/customer/list'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">  
+       </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ibrahim"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salah"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ibrahim@gmail.com"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212144"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Egypt"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"governorate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cairo"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nasr"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"72 gamal st"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"apt_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">  
+       </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tamer"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aly"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"taly@hotmail.com"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+20133444144"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Egypt"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"governorate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alex"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nasr"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12 roshdy st"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"apt_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves a list of your customers.</p>
+<h3 id='parameters-7'>Parameters</h3>
+<p>No parameters.</p>
+
+<aside class="notice">
+List all customers using filters.
+</aside>
+<h3 id='returns-21'>Returns</h3>
+<p>Returns customer list, If no more customers are available, the resulting array will be empty. This request should never return an error.</p>
+<h1 id='payment'>Payment</h1><h2 id='get-a-payment'>Get a payment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/payment/get/{transactionId}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"external_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"init_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-22</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"update_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-23</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201101212888"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initialized"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"invoice_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030264"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"net_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852162"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_method_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MasterCard"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_gateway_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyFatoorh"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+     </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves the details of an existing payment.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>transaction_id</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-22'>Returns</h3>
+<p>Returns a payment object if a valid identifier was provided, and returns an error otherwise.</p>
+
+<aside class="notice">
+The error code used when you fail to get payment object is <a href="#9111">9111</a>
+</aside>
+<h2 id='list-all-payments'>List all payments</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/payment/list'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"external_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"init_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-22</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"update_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-23</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212888"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bit.ly/3KXl3iA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"invoice_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"net_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852168"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_method_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visa"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_gateway_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyFatoorh"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"external_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"init_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-22</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"update_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-23</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201101212888"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initialized"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"invoice_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030264"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"net_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852162"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_method_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MasterCard"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_gateway_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyFatoorh"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+     </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves all payments.</p>
+<h3 id='parameters-8'>Parameters</h3>
+<p>No parameters</p>
+<h3 id='returns-23'>Returns</h3>
+<p>Returns a payment list which has the details of the payment like: status, amount paid and payment method.</p>
+<h1 id='refund'>Refund</h1>
+<p>Allows you to refund a charge that has previously been created but not yet refunded.</p>
+<h2 id='request-a-refund'>Request a refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/refund/request'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"refund_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint helps you to request refund.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>transaction_id</td>
+<td>Integer</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the transaction object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-24'>Returns</h3>
+<p>Returns the refund id. Status in refund object will be in pending state.</p>
+
+<aside class="notice">
+Default value of refund is equal to payment value.
+</aside>
+
+<aside class="notice">
+The error code used when you fail to request refund is <a href="#9112">9112</a>
+</aside>
+<h2 id='list-all-refunds'>List all refunds</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/refund/list'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"refund_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"external_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"init_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-22</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"update_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-23</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">40.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"refund_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"external_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"init_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-22</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"update_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-23</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">90.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paid"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>List refund objects.</p>
+<h3 id='parameters-9'>Parameters</h3>
+<p>No parameters</p>
+<h3 id='returns-25'>Returns</h3>
+<p>Returns refund object list. If no more refunds are available, the resulting array will be empty.</p>
+<h2 id='get-refund'>Get refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/refund/get/{refundId}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"refund_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"external_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"init_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-22</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"update_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-02-23</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">90.0</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paid"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves the refund object.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>refund_id</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the refund object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-26'>Returns</h3>
+<p>Returns refund object if a valid refund id is provided.</p>
+
+<aside class="notice">
+The error code used when you fail to get refund status is <a href="#9111">9111</a>
+</aside>
+<h1 id='invoice'>Invoice</h1>
+<p>An invoice is an itemized list that records the products or services you provided to your customers, the total amount due, and a method for them to pay you for those items or services. Invoices can be paid in one payment or in installments.</p>
+<h2 id='create-an-invoice'>Create an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="nt">-d</span> <span class="s2">"customer[email]"</span><span class="o">=</span><span class="s2">"ahmed@gmail.com"</span>
+     <span class="nt">-d</span> <span class="s2">"customer[city]"</span><span class="o">=</span><span class="s2">"mansoura"</span>
+     <span class="nt">-d</span> <span class="s2">"invoice[invoice_number]"</span><span class="o">=</span>55
+     <span class="s1">'https://circlepay.ai/apis/invoice/create'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_16436703344261"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"invoice_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"complete checkout url"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates an invoice for a given customer. The invoice created will be in &quot;pending&quot; status.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invoice</td>
+<td>Object</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The details of the invoice object.</td>
+</tr>
+</tbody></table>
+
+<p>The table below contains invoice object attributes.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invoice_number</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The invoice number.</td>
+</tr>
+<tr>
+<td>items</td>
+<td>Array</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Array of item object which has the details of items in invoice for example: name,description,quantity and price.</td>
+</tr>
+<tr>
+<td>customer_mobile</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer mobile number.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The status of invoice for example: 0 means Due, 1 means Over_Due, 2 means Paid, 3 means  Deactivated.</td>
+</tr>
+<tr>
+<td>create_date</td>
+<td>Date</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The creation date of invoice.</td>
+</tr>
+<tr>
+<td>due_date</td>
+<td>Date</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The due date of invoice which is the latest payment can be made on an invoice or debt before it&#39;s considered overdue.</td>
+</tr>
+<tr>
+<td>pref_payment_method</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The preferred payment method and it&#39;s related payment gateway for example: CARD/PayMob means method_name/gateway_name.</td>
+</tr>
+<tr>
+<td>shipping_fees</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The shipping fees on invoice&#39;s items.</td>
+</tr>
+<tr>
+<td>discount_value</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The discount value on total cost of items.</td>
+</tr>
+<tr>
+<td>discount_type</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The discount type, it can be value or percent.</td>
+</tr>
+<tr>
+<td>discount_value_calculated</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The discount value calculated if the discount type is percent.</td>
+</tr>
+<tr>
+<td>tax</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The tax in percent.</td>
+</tr>
+<tr>
+<td>tax_value</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The calculated tax amount.</td>
+</tr>
+<tr>
+<td>shipping_policy</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The shipping policy contains potential delays due to a high volume of orders or postal service problems that are outside of your control, Domestic Shipping Rates and Estimates, local delivery policy and international shipping policy.</td>
+</tr>
+<tr>
+<td>return_policy</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The rules a retailer or merchant creates to manage how customers return and exchange unwanted merchandise they purchased for example, Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.</td>
+</tr>
+<tr>
+<td>extra_notes</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The notes or comments to make invoice more clear.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-27'>Returns</h3>
+<p>Returns an invoice object that has been created. Returns error if the customer ID provided is invalid.</p>
+
+<aside class="notice">
+The error codes used when you fail to create an invoice are <a href="#5101">5101</a> , <a href="#1110">1110</a>
+</aside>
+<h2 id='retrieve-an-invoice'>Retrieve an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/invoice/get/{invoice_number}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030261"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"shoe"</span><span class="p">,</span><span class="nl">"description"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="nl">"price"</span><span class="p">:</span><span class="mf">90.0</span><span class="p">}],</span><span class="w">
+     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212333"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-12-20</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-12-25</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"pref_payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CARD/PayMob"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"shipping_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"discount_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"discount_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"percent"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"discount_value_calculated"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.9</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"tax_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.0</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"shipping_policy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shipping options you offer (overnight, standard, air mail, international)"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"return_policy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment."</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"extra_notes"</span><span class="p">:</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+ </span><span class="p">],</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves the invoice with the given invoice number.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invoice_number</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The invoice number.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-28'>Returns</h3>
+<p>Returns an invoice object if a valid invoice number was provided. Returns an error otherwise.</p>
+
+<aside class="notice">
+The error code used when you fail to retrieve an invoice is <a href="#5111">5111</a>
+</aside>
+<h2 id='list-invoices'>list invoices</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/invoice/list/{customer_mobile}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">List</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">invoices</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030261"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"shoe"</span><span class="p">,</span><span class="nl">"description"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="nl">"price"</span><span class="p">:</span><span class="mf">90.0</span><span class="p">}],</span><span class="w">
+     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212333"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-12-20</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-12-25</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"pref_payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CARD/PayMob"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"shipping_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"discount_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"discount_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"percent"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"discount_value_calculated"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.9</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"tax_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.0</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"shipping_policy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shipping options you offer (overnight, standard, air mail, international)"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"return_policy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment."</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"extra_notes"</span><span class="p">:</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+   </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint list invoices for a given customer.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customer_mobile</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Customer&#39;s mobile number.</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>invoices list returned based on this filter object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-29'>Returns</h3>
+<p>Returns list of invoice objects.</p>
+<h2 id='delete-an-invoice'>Delete an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/invoice/delete/{invoice_number}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1645465416865"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Delete an invoice ONLY IF the invoice has no transactions.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invoice_num</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Invoice&#39;s number.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-30'>Returns</h3>
+<p>Returns the deleted invoice number.</p>
+
+<aside class="notice">
+The error code used when you fail to delete an invoice is <a href="#5111">5111</a>
+</aside>
+<h2 id='pay-an-invoice'>Pay an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="nt">-d</span> <span class="nv">invoice_number</span><span class="o">=</span><span class="s2">"CIR_INV_16436702430261"</span>
+     <span class="s1">'https://circlepay.ai/apis/invoice/pay'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1645895596175"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"invoice_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://staging.circlepay.ai/payment/make-payment/ddb411b2b2ecca4508ec1645465416853/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJxdWVyeVBhcmFtcyI6Ij9zdGVwPTMmT1BFeHRlcm5hbD0xNjQ1ODk1NTk2MTc1JnNlbGVjdGVkUGF5bWVudE1ldGhvZD1DQVJEJnNlbGVjdGVkUGF5bWVudEdhdGV3YXk9UGF5TW9iJnNvdXJjZT1leHRlcm5hbCIsImlhdCI6MTY0NTg5NTU5Nn0.c4526On6Nk7KgaIRaarolHnC5GXwvPC8ISnXbTLu6nI"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Pay an invoice.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invoice_number</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Invoice&#39;s number.</td>
+</tr>
+<tr>
+<td>customer_mobile</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer mobile number.</td>
+</tr>
+<tr>
+<td>payment_method_id</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The unique identifier of payment method.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Payment method and payment gateway must be together, can't send only one.
+</aside>
+
+<aside class="notice">
+The error codes used when you fail to pay an invoice are <a href="#5111">5111</a> , <a href="#5114">5114</a> , <a href="#7113">7113</a> , <a href="#7111">7111</a> 
+</aside>
+<h3 id='returns-31'>Returns</h3>
+<p>Pay the invoice if a valid invoice number was provided. Returns an error otherwise.</p>
+<h1 id='errors'>Errors</h1>
+<p>Error code is a numeric or alphanumeric code that helps you to determine the nature of an error and why it occurred. The CirclePay API uses the following error codes:</p>
+<h2 id='general'>General</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span id="1110">1110</span></td>
+<td>Data missing</td>
+<td>{ATTRIBUTE} is missing.</td>
+</tr>
+<tr>
+<td><span id="1111">1111</span></td>
+<td>Invalid request structure</td>
+<td>The object structure sent is invalid. If you follow the documentation and still facing the same issue, please contact the support team.</td>
+</tr>
+<tr>
+<td><span id="1112">1112</span></td>
+<td>Invalid request data</td>
+<td>The {ATTRIBUTE} has invalid value.</td>
+</tr>
+<tr>
+<td><span id="1114">1114</span></td>
+<td>Field length error</td>
+<td>The field {ATTRIBUTE} length must be less than {ATTRIBUTE} and more than {ATTRIBUTE}.</td>
+</tr>
+<tr>
+<td><span id="1115">1115</span></td>
+<td>Invalid date format</td>
+<td>The date format is invalid. Please refer to the documentation for the right date format.</td>
+</tr>
+<tr>
+<td><span id="1116">1116</span></td>
+<td>Invalid email</td>
+<td>The email format is invalid.</td>
+</tr>
+<tr>
+<td><span id="1117">1117</span></td>
+<td>Invalid phone number format</td>
+<td>The phone number format is invalid (International format is required).</td>
+</tr>
+</tbody></table>
+<h2 id='authentication'>Authentication</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span id="2110">2110</span></td>
+<td>Merchant key is incorrect</td>
+<td>The merchant key might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td><span id="2111">2111</span></td>
+<td>Invalid verification code</td>
+<td>The provided verification code is incorrect.</td>
+</tr>
+<tr>
+<td><span id="2112">2112</span></td>
+<td>Password is invalid</td>
+<td>The provided password isn&#39;t following the password requirements.</td>
+</tr>
+<tr>
+<td><span id="2113">2113</span></td>
+<td>Password isnot matching</td>
+<td>The password entered is not matching the first password field.</td>
+</tr>
+</tbody></table>
+<h2 id='customer'>Customer</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span id="3110">3110</span></td>
+<td>Cannot find the customer</td>
+<td>The customer phone number might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td><span id="3111">3111</span></td>
+<td>Customer already exist</td>
+<td>Another customer exists with the same phone number.</td>
+</tr>
+</tbody></table>
+<h2 id='payment-links'>Payment Links</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span id="4101">4101</span></td>
+<td>Cannot create Payment link</td>
+<td>Cannot create a payment link for an unknown reason. Please contact CirclePay support team.</td>
+</tr>
+<tr>
+<td><span id="4111">4111</span></td>
+<td>Cannot find the payment link</td>
+<td>The Payment link URL might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td><span id="4112">4112</span></td>
+<td>Expire date cannot be in the past</td>
+<td>Cannot add a past date for a payment link {ATTRIBUTE}.</td>
+</tr>
+<tr>
+<td><span id="4115">4115</span></td>
+<td>Payment link is expired</td>
+<td>Cannot pay an expired payment link.</td>
+</tr>
+<tr>
+<td><span id="4211">4211</span></td>
+<td>Cannot find form</td>
+<td>The form id might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td><span id="4212">4212</span></td>
+<td>Cannot update the form</td>
+<td>Cannot update the form as it might include responses.</td>
+</tr>
+<tr>
+<td><span id="4311">4311</span></td>
+<td>Cannot find coupon</td>
+<td>The coupon code might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td><span id="4312">4312</span></td>
+<td>Cannot update the coupon</td>
+<td>Cannot update the coupon as it might be linked to payments.</td>
+</tr>
+<tr>
+<td><span id="4313">4313</span></td>
+<td>Cannot delete the coupon</td>
+<td>Cannot delete the coupon as it might be linked to payments.</td>
+</tr>
+</tbody></table>
+<h2 id='invoices'>Invoices</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span id="5101">5101</span></td>
+<td>Cannot create an invoice</td>
+<td>Cannot create an invoice for an unknown reason. Please contact CirlepPay support team.</td>
+</tr>
+<tr>
+<td><span id="5111">5111</span></td>
+<td>Cannot find the invoice</td>
+<td>The invoice number might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td><span id="5112">5112</span></td>
+<td>Cannot create the invoice</td>
+<td>Cannot add a past date for an invoice {ATTRIBUTE}.</td>
+</tr>
+<tr>
+<td><span id="5113">5113</span></td>
+<td>Cannot delete the invoice</td>
+<td>Cannot delete the invoice as it might be linked to other fields.</td>
+</tr>
+<tr>
+<td><span id="5114">5114</span></td>
+<td>Customer phone number is incorrect</td>
+<td>Cannot change the customer phone attached to the invoice.</td>
+</tr>
+</tbody></table>
+<h2 id='payment-gateways'>Payment gateways</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span id="7110">7110</span></td>
+<td>Cannot enable the payment gateway</td>
+<td>Cannot enable the payment gate for an unknow reason. Please contact CirclePay support team.</td>
+</tr>
+<tr>
+<td><span id="7111">7111</span></td>
+<td>Cannot find the payment gateway</td>
+<td>The payment gateway ID might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td><span id="7112">7112</span></td>
+<td>Cannot enable the payment method</td>
+<td>Cannot enable the payment method for an unknow reason. Please contact CirclePay support team.</td>
+</tr>
+<tr>
+<td><span id="7113">7113</span></td>
+<td>Cannot find the payment method</td>
+<td>The payment method ID might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td><span id="7114">7114</span></td>
+<td>Cannot set the payment method fee</td>
+<td>Cannot set the payment method fee. Please contact the support team.</td>
+</tr>
+</tbody></table>
+<h2 id='merchant'>Merchant</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span id="8110">8110</span></td>
+<td>Cannot create a merchant</td>
+<td>The merchant phone number is being used by another account.</td>
+</tr>
+<tr>
+<td><span id="8111">8111</span></td>
+<td>Cannot find the merchant</td>
+<td>The merchant key might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td><span id="8112">8112</span></td>
+<td>Config file has incorrect structure</td>
+<td>The config JSON file structure is incorrect.</td>
+</tr>
+<tr>
+<td><span id="8113">8113</span></td>
+<td>Cannot send OTP</td>
+<td>The service failed to send an OTP to the merchant.</td>
+</tr>
+<tr>
+<td><span id="8114">8114</span></td>
+<td>Invalid Callback URL</td>
+<td>Callback URL structure is invalid.</td>
+</tr>
+<tr>
+<td><span id="8115">8115</span></td>
+<td>Merchant account is inactive</td>
+<td>Cannot do this operation as the account is inactive.</td>
+</tr>
+<tr>
+<td><span id="8116">8116</span></td>
+<td>Cannot update the merchant phone number</td>
+<td>Cannot update the merchant phone number as it&#39;s being used by another account.</td>
+</tr>
+</tbody></table>
+<h2 id='transactions'>Transactions</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span id="9110">9110</span></td>
+<td>Transaction data request is missing</td>
+<td>The transaction data request is missing {ATTRIBUTE}.</td>
+</tr>
+<tr>
+<td><span id="9111">9111</span></td>
+<td>Cannot find the transaction</td>
+<td>The transaction ID might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td><span id="9112">9112</span></td>
+<td>Refund request rejected</td>
+<td>The payment gateway rejected the refund request for the following reason {ATTRIBUTE}.</td>
+</tr>
+</tbody></table>
+<h1 id='validation-rules'>Validation Rules</h1>
+<p>Validation rules verify that the data a user enters in a record meets the CirclePay standards.</p>
+
+<table><thead>
+<tr>
+<th>Parmeter</th>
+<th>Type</th>
+<th>Validation Rule</th>
+<th>Error&nbsp;Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Email</td>
+<td>Text</td>
+<td>Max length(chr) - 50 characters<br> Min length(chr) - NA<br> Must be a valid email format</td>
+<td>&quot;The email must be less than 50 characters&quot;<br>&quot;The provided email isn&#39;t valid&quot;<br>&quot;The email is required&quot;</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
